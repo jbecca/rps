@@ -37,6 +37,14 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
         },
         Direction::Left,
     ));
+    commands.spawn((
+        SpriteBundle {
+            texture: asset_server.load("pixel/scissors.png"),
+            transform: Transform::from_xyz(-50., 50., 0.),
+            ..default()
+        },
+        Direction::Left,
+    ));
 }
 
 fn sprite_movement(time: Res<Time>, mut sprite_position: Query<(&mut Direction, &mut Transform)>) {
